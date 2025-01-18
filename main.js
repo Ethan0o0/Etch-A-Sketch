@@ -4,9 +4,15 @@ for (i = 0; i < 16; i++) {
     for (f = 0; f < 16; f++) {
         const grid = document.createElement("div");
         grid.classList.add("grid");
-        grid.textContent = "Testing";
+        // grid.textContent = "Testing";
         container.appendChild(grid);
     }
 }
 
+const grids = document.querySelectorAll(".grid");
 
+grids.forEach((grid) => {
+    grid.addEventListener("mouseenter", function() {
+        grid.style.backgroundColor = "gray";
+    })
+})
