@@ -1,13 +1,19 @@
 .container {
+    height: 500px;
+    width: 500px;
     display: grid;
-    grid-template-columns: repeat(16, 70px);
-    grid-template-rows: repeat(16, 50px);
+    grid-template-columns: repeat(16, 1fr);
     padding: 10px;
     justify-content: center;
-    gap: 5px;
 }
 
 .grid {
-    border: solid black 3px;
-    /* gap: 5px; */
+    border: solid black 1px;
+}
+
+.button-main {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
 }
