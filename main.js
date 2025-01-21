@@ -3,6 +3,10 @@ const container = document.querySelector(".container");
 const grid_px_size = 500;
 
 function makeGrid(grid_size) {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    };
+
     const width = grid_px_size / grid_size;
     for (i = 0; i < parseInt(grid_size); i++) {
         for (f = 0; f < parseInt(grid_size); f++) {
@@ -23,16 +27,23 @@ button.addEventListener("click", function() {
     if (grid_size < 0 || grid_size > 100) {
         grid_size = 0;
     };
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    };
     makeGrid(grid_size);
 });
 
-const grids = document.querySelectorAll(".grid");
+// const grids = document.querySelectorAll(".grid");
 
-grids.forEach((grid) => {
-    grid.addEventListener("mouseenter", function() {
-        grid.style.backgroundColor = "gray";
+// grids.forEach((grid) => {
+//     grid.addEventListener("mouseenter", function() {
+//         grid.style.backgroundColor = "gray";
+//     })
+// })
+
+container.addEventListener("mouseenter", function() {
+    const grids = document.querySelectorAll(".grid");
+
+    grids.forEach((grid) => {
+        grid.addEventListener("mouseenter", function() {
+            grid.style.backgroundColor = "gray";
+        })
     })
 })
