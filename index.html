@@ -8,9 +8,13 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-    <div class="button-main">
-        <button>Create New Grid</button>
+    <div class="grid_adjust">
+        <!-- <button>Create New Grid</button> -->
+         <label for="grid_num" class="grid_num">16</label>
+         <input type="range" name="gridSize" min="1" max="100" value="16" class="slider">
+         <label for="gridsize">GridSize</label>
     </div>
+    <!-- This is where the grid is made -->
     <div class="container"></div>
 </body>
 </html>

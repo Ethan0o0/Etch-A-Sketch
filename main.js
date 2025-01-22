@@ -20,23 +20,14 @@ function makeGrid(grid_size) {
 
 makeGrid(16);
 
-const button = document.querySelector(".button-main");
+const slider = document.querySelector(".slider");
+const slider_num = document.querySelector(".grid_num");
 
-button.addEventListener("click", function() {
-    let grid_size = prompt("Please enter a grid size");
-    if (grid_size < 0 || grid_size > 100) {
-        grid_size = 0;
-    };
-    makeGrid(grid_size);
+slider.addEventListener("input", function() {
+    slider_num.textContent = slider.value;
+    makeGrid(slider.value);
 });
 
-// const grids = document.querySelectorAll(".grid");
-
-// grids.forEach((grid) => {
-//     grid.addEventListener("mouseenter", function() {
-//         grid.style.backgroundColor = "gray";
-//     })
-// })
 
 container.addEventListener("mouseenter", function() {
     const grids = document.querySelectorAll(".grid");
