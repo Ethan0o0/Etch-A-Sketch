@@ -28,13 +28,32 @@ slider.addEventListener("input", function() {
     makeGrid(slider.value);
 });
 
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+const rgb = document.querySelector(".rgb");
+let rgb_boolean;
+rgb.addEventListener("click", function() {
+    rgb_boolean = true;
+})
 
 container.addEventListener("mouseenter", function() {
     const grids = document.querySelectorAll(".grid");
 
     grids.forEach((grid) => {
         grid.addEventListener("mouseenter", function() {
-            grid.style.backgroundColor = "gray";
+            if (rgb_boolean) {
+                grid.style.backgroundColor = getRandomColor();
+            }
+            else {
+                grid.style.backgroundColor = "gray";
+            }
         })
     })
 })

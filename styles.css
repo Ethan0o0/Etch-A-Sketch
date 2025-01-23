@@ -1,3 +1,8 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
 .container {
     height: 500px;
     width: 500px;
@@ -16,4 +21,9 @@
     justify-content: center;
     margin: 20px;
     padding: 10px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
 }
